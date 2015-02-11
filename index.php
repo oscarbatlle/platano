@@ -9,6 +9,7 @@ require('includes/config.php');
 <head>
     <meta charset="utf-8">
     <title>Pl&aacute;tano - The Super-lightweight blog engine</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -27,7 +28,7 @@ require('includes/config.php');
 
             echo '<div>';
             echo '<h1><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h1>';
-            echo '<p>Posted on ' . date('jS M Y H:i:s', strtotime($row['postDate'])) . '</p>';
+            echo '<p>Posted on ' . date('jS M Y h:i A', strtotime($row['postDate'])) . '</p>';
             echo '<p>' . $row['postDesc'] . '</p>';
             echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
             echo '</div>';
