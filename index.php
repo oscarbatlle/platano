@@ -26,9 +26,9 @@ require('includes/config.php');
         while ($row = $stmt->fetch())
         {
 
-            echo '<div>';
-            echo '<h1><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h1>';
-            echo '<p class="blog-desc">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
+            echo '<div id="blog-body">';
+            echo '<h2><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
+            echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
             echo '<p>' . $row['postDesc'] . '</p>';
             echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
             echo '</div>';

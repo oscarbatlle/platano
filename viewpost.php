@@ -35,8 +35,8 @@ if ($row['postID'] == '')
 
     <?php
     echo '<div>';
-    echo '<h1>' . $row['postTitle'] . '</h1>';
-    echo '<p>' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
+    echo '<h2>' . $row['postTitle'] . '</h2>';
+    echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
     echo '<p>' . $row['postCont'] . '</p>';
     echo '</div>';
     ?>
