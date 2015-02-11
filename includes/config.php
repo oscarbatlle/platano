@@ -49,3 +49,5 @@ function __autoload($class)
         require_once $classpath;
     }
 }
+
+$user = new User($db);
