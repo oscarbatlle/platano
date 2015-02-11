@@ -35,6 +35,16 @@
     -webkit-border-radius: 0.5em;
 }
 
+#header-title {
+    margin: auto;
+    background: url(../images/banner-bg.png) no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 12em 0px;
+    position: relative;
+    color: white;
+}
+
 .post {
     border-bottom: #EBF2F6 1px solid;
     margin: 2rem auto;
