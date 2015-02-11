@@ -77,7 +77,7 @@ if (isset($_GET['deluser']))
                 ?>
 
                 <td>
-                    <a href="edit-user.php?id=<?php echo $row['memberID'];?>">Edit</a>
+                    <a href="edituser.php?id=<?php echo $row['memberID'];?>">Edit</a>
                     <?php if ($row['memberID'] != 1)
                     { ?>
                         | <a
@@ -97,7 +97,7 @@ if (isset($_GET['deluser']))
         ?>
     </table>
 
-    <p><a href='add-user.php'>Add User</a></p>
+    <p><a href='adduser.php'>Add User</a></p>
 
 </div>
 
