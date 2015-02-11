@@ -12,11 +12,13 @@ require('includes/config.php');
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-<div id="wrapper">
-
+<div id="header">
+    <div id="header-title">
     <h1>Pl&aacute;tano - The Super-lightweight blog engine</h1>
     <hr/>
+    </div>
+</div>
+<div id="wrapper">
 
     <?php
     try
