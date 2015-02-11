@@ -35,6 +35,11 @@
     -webkit-border-radius: 0.5em;
 }
 
+.post {
+    border-bottom: #EBF2F6 1px solid;
+    margin: 2rem auto;
+}
+
 p.blog-date {
     color: #999;
     margin: 0 0 10px 0;
