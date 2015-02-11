@@ -16,6 +16,7 @@ if (!$user->is_logged_in())
 <head>
     <meta charset="utf-8">
     <title>Admin - Add Post</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
     <script>
         tinymce.init({

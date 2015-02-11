@@ -16,6 +16,7 @@ if ($user->is_logged_in())
 <head>
     <meta charset="utf-8">
     <title>Admin Login</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 

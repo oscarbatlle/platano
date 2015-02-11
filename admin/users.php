@@ -34,6 +34,7 @@ if (isset($_GET['deluser']))
 <head>
     <meta charset="utf-8">
     <title>Admin - Users</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <script language="JavaScript" type="text/javascript">
         function deluser(id, title) {
             if (confirm("Are you sure you want to delete '" + title + "'")) {

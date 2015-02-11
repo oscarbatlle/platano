@@ -7,13 +7,17 @@ require_once('../includes/config.php');
 
 # if not logged in redirect to login page
 
-if(!$user->is_logged_in()){ header('Location: login.php'); }
+if (!$user->is_logged_in())
+{
+    header('Location: login.php');
+}
 
 # Show message from add / edit page
 
-if(isset($_GET['delpost'])){
+if (isset($_GET['delpost']))
+{
 
-    $stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID') ;
+    $stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID');
     $stmt->execute(array(':postID' => $_GET['delpost']));
 
     header('Location: index.php?action=deleted');
@@ -26,11 +30,10 @@ if(isset($_GET['delpost'])){
 <head>
     <meta charset="utf-8">
     <title>Admin area</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <script language="JavaScript" type="text/javascript">
-        function delpost(id, title)
-        {
-            if (confirm("Are you sure you want to delete '" + title + "'"))
-            {
+        function delpost(id, title) {
+            if (confirm("Are you sure you want to delete '" + title + "'")) {
                 window.location.href = 'index.php?delpost=' + id;
             }
         }
@@ -40,12 +43,13 @@ if(isset($_GET['delpost'])){
 
 <div id="wrapper">
 
-    <?php include('menu.php');?>
+    <?php include('menu.php'); ?>
 
     <?php
     //show message from add / edit page
-    if(isset($_GET['action'])){
-        echo '<h3>Post '.$_GET['action'].'.</h3>';
+    if (isset($_GET['action']))
+    {
+        echo '<h3>Post ' . $_GET['action'] . '.</h3>';
     }
     ?>
 
@@ -56,14 +60,16 @@ if(isset($_GET['delpost'])){
             <th>Action</th>
         </tr>
         <?php
-        try {
+        try
+        {
 
             $stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC');
-            while($row = $stmt->fetch()){
+            while ($row = $stmt->fetch())
+            {
 
                 echo '<tr>';
-                echo '<td>'.$row['postTitle'].'</td>';
-                echo '<td>'.date('jS M Y', strtotime($row['postDate'])).'</td>';
+                echo '<td>' . $row['postTitle'] . '</td>';
+                echo '<td>' . date('jS M Y', strtotime($row['postDate'])) . '</td>';
                 ?>
 
                 <td>
@@ -76,7 +82,8 @@ if(isset($_GET['delpost'])){
 
             }
 
-        } catch(PDOException $e) {
+        } catch (PDOException $e)
+        {
             echo $e->getMessage();
         }
         ?>
