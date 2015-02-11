@@ -1,6 +1,6 @@
 #wrapper {
-    margin:auto;
-    width:900px;
+    margin: auto;
+    width: 900px;
 }
 
 #login {
@@ -35,14 +35,31 @@
     -webkit-border-radius: 0.5em;
 }
 
-p,li {
+p.blog-desc {
+    color: #999;
+    margin: 0 0 10px 0;
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    color: #2E2E2E;
+    line-height: 1.15em;
+    margin: 0 0 0.4em 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+p, li {
     color: #555555;
     font-size: 16px;
     line-height: 1.5em;
 }
 
 a {
-    color: #EF1F2F;
+    color: #4A4A4A;
+    transition: color ease 0.3s;
     text-decoration: none;
 }
 
@@ -56,8 +73,34 @@ form input {
     margin: 2px;
 }
 
-table {width:98%; text-align:left; border:1px solid #DDDDDD; font-size:12px; color:#000;background:#fff; margin-bottom:10px;}
-table th {background-color:#E5E5E5; border:1px solid #BBBBBB; padding:3px 6px; font-weight:normal; color:#000;}
-table tr td {border:1px solid #DDDDDD; padding:5px 6px;}
-table tr.alt td {background-color:#E2E2E2;}
-table tr:hover {background-color:#F0F0F0; color:#000;}
+table {
+    width: 98%;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+    font-size: 12px;
+    color: #000;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+table th {
+    background-color: #E5E5E5;
+    border: 1px solid #BBBBBB;
+    padding: 3px 6px;
+    font-weight: normal;
+    color: #000;
+}
+
+table tr td {
+    border: 1px solid #DDDDDD;
+    padding: 5px 6px;
+}
+
+table tr.alt td {
+    background-color: #E2E2E2;
+}
+
+table tr:hover {
+    background-color: #F0F0F0;
+    color: #000;
+}
