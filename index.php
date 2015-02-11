@@ -15,7 +15,6 @@ require('includes/config.php');
 <div id="header">
     <div id="header-title">
     <h1>Pl&aacute;tano - The Super-lightweight blog engine</h1>
-    <hr/>
     </div>
 </div>
 <div id="wrapper">
