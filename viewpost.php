@@ -22,6 +22,7 @@ if ($row['postID'] == '')
 <head>
     <meta charset="utf-8">
     <title>Blog - <?php echo $row['postTitle']; ?></title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -35,7 +36,7 @@ if ($row['postID'] == '')
     <?php
     echo '<div>';
     echo '<h1>' . $row['postTitle'] . '</h1>';
-    echo '<p>Posted on ' . date('jS M Y', strtotime($row['postDate'])) . '</p>';
+    echo '<p>Posted on ' . date('jS M Y h:i A', strtotime($row['postDate'])) . '</p>';
     echo '<p>' . $row['postCont'] . '</p>';
     echo '</div>';
     ?>
