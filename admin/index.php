@@ -67,7 +67,7 @@ if(isset($_GET['delpost'])){
                 ?>
 
                 <td>
-                    <a href="edit-post.php?id=<?php echo $row['postID'];?>">Edit</a> |
+                    <a href="editpost.php?id=<?php echo $row['postID'];?>">Edit</a> |
                     <a href="javascript:delpost('<?php echo $row['postID'];?>','<?php echo $row['postTitle'];?>')">Delete</a>
                 </td>
 
@@ -82,7 +82,7 @@ if(isset($_GET['delpost'])){
         ?>
     </table>
 
-    <p><a href='add-post.php'>Add Post</a></p>
+    <p><a href='addpost.php'>Add Post</a></p>
 
 </div>
 
