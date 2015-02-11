@@ -21,14 +21,14 @@ if ($row['postID'] == '')
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog - <?php echo $row['postTitle']; ?></title>
+    <title><?php echo $row['postTitle']; ?></title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <div id="wrapper">
 
-    <h1>Blog</h1>
+    <h1>Pl&aacute;tano - The Super-lightweight blog engine</h1>
     <hr/>
     <p><a href="./">Blog Index</a></p>
 
@@ -36,7 +36,7 @@ if ($row['postID'] == '')
     <?php
     echo '<div>';
     echo '<h1>' . $row['postTitle'] . '</h1>';
-    echo '<p>Posted on ' . date('jS M Y h:i A', strtotime($row['postDate'])) . '</p>';
+    echo '<p>' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
     echo '<p>' . $row['postCont'] . '</p>';
     echo '</div>';
     ?>
