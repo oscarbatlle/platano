@@ -26,12 +26,15 @@ if ($row['postID'] == '')
 </head>
 <body>
 
+<div id="header">
+    <div id="header-title">
+        <h1>Pl&aacute;tano - The Super-lightweight blog engine</h1>
+        <hr/>
+    </div>
+</div>
 <div id="wrapper">
 
-    <h1>Pl&aacute;tano - The Super-lightweight blog engine</h1>
-    <hr/>
     <p><a href="./">Blog Index</a></p>
-
 
     <?php
     echo '<div>';
