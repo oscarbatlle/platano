@@ -1,5 +1,14 @@
+body {
+    background: #1F1F1E;
+}
+
 #wrapper {
-    margin: auto;
+    background: #f8f8f8;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding-top: 2em;
+    padding-left: 40px;
+    padding-right: 40px;
     width: 900px;
 }
 
