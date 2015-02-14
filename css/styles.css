@@ -46,11 +46,9 @@ body {
 }
 
 #header-title {
-    margin: auto;
-    background: url(../images/banner-bg.png) no-repeat;
+    margin: 20px auto;
     background-size: cover;
     text-align: center;
-    padding: 6em 0px;
     position: relative;
     color: white;
 }
