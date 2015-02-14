@@ -10,6 +10,7 @@ require('includes/config.php');
     <meta charset="utf-8">
     <title>Pl&aacute;tano - The Super-lightweight blog engine</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pagination.css">
 </head>
 <body>
 <div id="header">
@@ -22,10 +23,21 @@ require('includes/config.php');
 <div id="wrapper">
 
     <?php
+
+    # Create new object pass in number of pages and identifier
+    $pages = new Paginator('2', 'p');
+
+    # Get number of total records
+    $rows = $db->query('SELECT postID FROM blog_posts');
+    $total = $rows->rowCount();
+
+    # Assign total number of records
+    $pages->set_total($total);
+
     try
     {
 
-        $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
+        $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC ' . $pages->get_limit());
         while ($row = $stmt->fetch())
         {
 
@@ -42,6 +54,10 @@ require('includes/config.php');
     {
         echo $e->getMessage();
     }
+
+    # Output Pagination
+    echo $pages->page_links();
+
     ?>
 
 </div>
