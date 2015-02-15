@@ -39,8 +39,18 @@ body {
 
 #footer {
     clear: both;
-    padding: 5px 10px;
-    background: #cc9;
+    padding: 2.8125em 0;
+    color: white;
+    text-transform: uppercase;
+    background: #1F1F1E;
+    text-align: center;
+    font-family: "Open Sans", sans-serif
+}
+
+#footer-content {
+    margin: 0 auto;
+    width: 980px;
+    text-align: center;
 }
 
 #login {
