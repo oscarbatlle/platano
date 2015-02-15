@@ -125,7 +125,11 @@ class Paginator {
         if ($lastpage > 1)
         {
             $pagination .= "<ul class='pagination'>";
-            if ($this->_page > 1)
+            if ($this->_page == 2)
+            {
+                $pagination .= "<li><a href='./'>Previous</a></li>";
+            }
+            elseif ($this->_page > 1)
                 $pagination .= "<li><a href='" . $path . "$this->_instance=$prev" . "$ext'>Previous</a></li>";
             else
                 $pagination .= "<span class='disabled'>Previous</span>";
@@ -135,9 +139,7 @@ class Paginator {
                 for ($counter = 1; $counter <= $lastpage; $counter++)
                 {
                     if ($counter == $this->_page)
-                        $pagination .= "<li><span class='current'>$counter</span></li>";
-                    else
-                        $pagination .= "<li><a href='" . $path . "$this->_instance=$counter" . "$ext'>$counter</a></li>";
+                        $pagination .= "<li><span class='current'>Page $counter of $lastpage</span></li>";
                 }
             } elseif ($lastpage > 5 + ($adjacents * 2))
             {
