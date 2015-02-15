@@ -13,54 +13,66 @@ require('includes/config.php');
     <link rel="stylesheet" href="css/pagination.css">
 </head>
 <body>
-<div id="header">
-    <div id="header-title">
-        <h1>Pl&aacute;tano</h1>
-
-        <h2>The Super-lightweight blog engine</h2>
-    </div>
-</div>
 <div id="wrapper">
 
-    <?php
+    <div id="header">
+        <div id="header-title">
+            <h1>Pl&aacute;tano</h1>
 
-    # Create new object pass in number of pages and identifier
-    $pages = new Paginator('2', 'p');
+            <h2>The Super-lightweight blog engine</h2>
+        </div>
+    </div>
 
-    # Get number of total records
-    $rows = $db->query('SELECT postID FROM blog_posts');
-    $total = $rows->rowCount();
+    <div id="main">
+        <?php
 
-    # Assign total number of records
-    $pages->set_total($total);
+        # Create new object pass in number of pages and identifier
+        $pages = new Paginator('2', 'p');
 
-    try
-    {
+        # Get number of total records
+        $rows = $db->query('SELECT postID FROM blog_posts');
+        $total = $rows->rowCount();
 
-        $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC ' . $pages->get_limit());
-        while ($row = $stmt->fetch())
+        # Assign total number of records
+        $pages->set_total($total);
+
+        try
         {
 
-            echo '<div class="post">';
-            echo '<h2><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
-            echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
-            echo '<p>' . $row['postDesc'] . '</p>';
-            echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
-            echo '</div>';
+            $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC ' . $pages->get_limit());
+            while ($row = $stmt->fetch())
+            {
 
+                echo '<div class="post">';
+                echo '<h2><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
+                echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
+                echo '<p>' . $row['postDesc'] . '</p>';
+                echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
+                echo '</div>';
+
+            }
+
+        } catch (PDOException $e)
+        {
+            echo $e->getMessage();
         }
 
-    } catch (PDOException $e)
-    {
-        echo $e->getMessage();
-    }
+        # Output Pagination
+        echo $pages->page_links();
 
-    # Output Pagination
-    echo $pages->page_links();
+        ?>
+    </div>
 
-    ?>
+    <div id="sidebar">
+        <div id="sidebard-content">
+        <p>Test Content</p>
+        </div>
+    </div>
 
+<div id="footer">
+    Footer
 </div>
+    </div>
 
 </body>
 </html>
