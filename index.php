@@ -85,7 +85,7 @@ require('includes/config.php');
 <div class="etc"></div>
 
 <div id="footer">
-    <div id="footer-content">Pl&aacute;tano - The Super-lightweight blog engine</div>
+    <div id="footer-content">Pl&aacute;tano - The Super-lightweight blog engine by <a href="https://github.com/oscarbatlle/platano">Oscar Batlle</div>
 </div>
 
 
