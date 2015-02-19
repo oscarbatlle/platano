@@ -37,20 +37,24 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+.etc {
+    clear: both;
+    padding: 10px;
+}
+
 #footer {
     clear: both;
     padding: 2.8125em 0;
-    color: white;
     text-transform: uppercase;
-    background: #1F1F1E;
-    text-align: center;
-    font-family: "Open Sans", sans-serif
+    border-top: #DDDDDD 1px solid;
+    font-family: "Open Sans", sans-serif;
 }
 
 #footer-content {
     margin: 0 auto;
     width: 980px;
     text-align: center;
+    color: rgba(46, 48, 58, 0.96);
 }
 
 #login {
@@ -125,8 +129,7 @@ body {
 }
 
 .post-title a {
-    color: #1F1F1E;
-    text-transform: uppercase;
+    color: #363842;
 }
 
 p.blog-date {
@@ -139,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    color: #2E2E2E;
+    color: #363842;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
     font-family: "Open Sans", sans-serif;
