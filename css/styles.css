@@ -129,6 +129,7 @@ body {
 }
 
 .post-title a {
+    font-size: 22px;
     color: #363842;
 }
 
@@ -155,9 +156,13 @@ p, li {
 }
 
 a {
-    color: #4A4A4A;
-    transition: color ease 0.3s;
+    font-size: 14px;
+    color: #ad141e;
     text-decoration: none;
+    -webkit-transition: color 0.1s linear;
+    -moz-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+    font-family: "Open Sans", sans-serif;
 }
 
 form input {
