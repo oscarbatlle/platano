@@ -29,7 +29,7 @@ require('includes/config.php');
             <?php
 
             # Create new object pass in number of pages and identifier
-            $pages = new Paginator('2', 'p');
+            $pages = new Paginator('3', 'p');
 
             # Get number of total records
             $rows = $db->query('SELECT postID FROM blog_posts');
@@ -72,10 +72,15 @@ require('includes/config.php');
 
         </div>
 
-        <div id="footer">
-            Footer
-        </div>
     </div>
+</div>
+
+<div class="etc"></div>
+
+<div id="footer">
+    <div id="footer-content">Pl&aacute;tano - The Super-lightweight blog engine</div>
+</div>
+
 
 </body>
 </html>
