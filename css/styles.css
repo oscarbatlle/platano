@@ -20,7 +20,7 @@ body {
 #sidebar {
     float: right;
     width: 300px;
-    padding: 10px;
+    margin-top: 25px;
     background: white;
     border-top-right-radius: 10px;
 }
@@ -30,7 +30,6 @@ body {
 }
 
 #sidebar-header {
-    margin: 10px;
     color: #999;
     font-size: 16px;
     text-transform: uppercase;
