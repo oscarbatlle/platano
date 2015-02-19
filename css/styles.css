@@ -86,25 +86,23 @@ body {
 }
 
 #header {
-    width: 100%;
+    border-bottom: #DDDDDD 1px solid;
+    width: 980px;
+    margin: 0 auto;
 }
 
 #header-title {
     padding: 20px;
-    background: #1F1F1E;
     background-size: cover;
     text-align: center;
     position: relative;
-    color: white;
 }
 
 #header-title h1 {
     margin-bottom: 0;
     font-size: 75px;
     font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    text-shadow: 4px 4px #000000;
+    color: rgba(46, 48, 58, 0.96);
 }
 
 #header-title h2 {
