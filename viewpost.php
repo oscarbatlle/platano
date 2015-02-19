@@ -35,10 +35,10 @@ if ($row['postID'] == '')
 </div>
 <div id="wrapper">
 
-    <p><a href="./">Blog Index</a></p>
+    <p><a href="./">&#8592; Home</a></p>
 
     <?php
-    echo '<div>';
+    echo '<div id="single-post-wrapper">';
     echo '<h2>' . $row['postTitle'] . '</h2>';
     echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
     echo '<p>' . $row['postCont'] . '</p>';
