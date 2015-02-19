@@ -127,6 +127,7 @@ body {
     margin: 20px;
 }
 
+
 .post-title a {
     font-size: 22px;
     color: #363842;
@@ -136,6 +137,20 @@ p.blog-date {
     color: #999;
     margin: 0 0 10px 0;
     font-style: italic;
+}
+
+.post:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #DDDDDD 1px solid;
+    margin: -5px auto;
+    background: #FFF;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
 }
 
 h1, h2, h3, h4, h5, h6 {
