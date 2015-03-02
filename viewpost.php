@@ -25,27 +25,29 @@ if ($row['postID'] == '')
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<div class="container">
+    <header class="banner">
+        <div class="inner-banner">
+            <h1>Pl&aacute;tano</h1>
 
-<div id="header">
-    <div id="header-title">
-        <h1>Pl&aacute;tano</h1>
+            <h2>The Super-lightweight blog engine</h2>
+        </div>
+    </header>
+    <div class="wrapper">
 
-        <h2>The Super-lightweight blog engine</h2>
+        <p><a href="./">&#8592; Home</a></p>
+
+        <?php
+        echo '<article>';
+        echo '<header>';
+        echo '<h2>' . $row['postTitle'] . '</h2>';
+        echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
+        echo '</header>';
+        echo '<p>' . $row['postCont'] . '</p>';
+        echo '</article>';
+        ?>
+
     </div>
 </div>
-<div id="wrapper">
-
-    <p><a href="./">&#8592; Home</a></p>
-
-    <?php
-    echo '<div id="single-post-wrapper">';
-    echo '<h2>' . $row['postTitle'] . '</h2>';
-    echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
-    echo '<p>' . $row['postCont'] . '</p>';
-    echo '</div>';
-    ?>
-
-</div>
-
 </body>
 </html>

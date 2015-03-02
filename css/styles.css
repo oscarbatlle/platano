@@ -3,53 +3,54 @@ body {
     background: #f8f8f8;
 }
 
-#wrapper {
+.group:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+.wrapper {
     margin: 10px auto 2em;
     width: 980px;
 }
 
-#main {
+main {
     float: left;
     width: 650px;
     border-top-left-radius: 10px;
     border-right: #DDDDDD 1px solid;
 }
 
-#sidebar {
+aside {
     float: right;
     width: 300px;
     margin-top: 25px;
     border-top-right-radius: 10px;
 }
 
-#sidebar-content {
-    margin: 10px;
-}
-
-#sidebar-header {
+aside h2 {
     color: #999;
     font-size: 16px;
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
 }
 
-.etc {
+footer {
     clear: both;
-    padding: 10px;
-}
-
-#footer {
-    clear: both;
-    padding: 2.8125em 0;
-    text-transform: uppercase;
+    padding: 20px;
     border-top: #DDDDDD 1px solid;
-    font-family: "Open Sans", sans-serif;
 }
 
-#footer-content {
+.inner-footer {
     margin: 0 auto;
     width: 980px;
+    text-transform: uppercase;
     text-align: center;
+    font-family: "Open Sans", sans-serif;
     color: rgba(46, 48, 58, 0.96);
 }
 
@@ -85,27 +86,27 @@ body {
     -webkit-border-radius: 0.5em;
 }
 
-#header {
+.banner {
     border-bottom: #DDDDDD 1px solid;
     width: 980px;
     margin: 0 auto;
 }
 
-#header-title {
+.inner-banner {
     padding: 20px;
     background-size: cover;
     text-align: center;
     position: relative;
 }
 
-#header-title h1 {
+.inner-banner h1 {
     margin-bottom: 0;
     font-size: 75px;
     font-weight: bold;
     color: rgba(46, 48, 58, 0.96);
 }
 
-#header-title h2 {
+.inner-banner h2 {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 5px;
@@ -113,17 +114,17 @@ body {
     color: rgba(46, 48, 58, 0.96);
 }
 
-#content-wrapper {
+.content-wrapper {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.post {
+article {
     border-bottom: #DDDDDD 1px solid;
     margin: 20px;
 }
 
-.post-title a {
+article header h2 a {
     font-size: 22px;
     color: #363842;
 }

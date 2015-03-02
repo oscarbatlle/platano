@@ -13,61 +13,62 @@ require('includes/config.php');
     <link rel="stylesheet" href="css/pagination.css">
 </head>
 <body>
+<div class="container">
+    <header class="banner">
+        <div class="inner-banner">
 
-<div id="header">
-    <div id="header-title">
-        <h1>Pl&aacute;tano</h1>
+            <h1>Pl&aacute;tano</h1>
 
-        <h2>The Super-lightweight blog engine</h2>
-    </div>
-</div>
+            <h2>The Super-lightweight blog engine</h2>
+        </div>
+    </header>
 
-<div id="wrapper">
+    <div class="wrapper">
+        <div class="content-wrapper group">
+            <main>
+                <?php
 
-    <div id="content-wrapper">
-        <div id="main">
-            <?php
+                # Create new object pass in number of pages and identifier
+                $pages = new Paginator('3', 'p');
 
-            # Create new object pass in number of pages and identifier
-            $pages = new Paginator('3', 'p');
+                # Get number of total records
+                $rows = $db->query('SELECT postID FROM blog_posts');
+                $total = $rows->rowCount();
 
-            # Get number of total records
-            $rows = $db->query('SELECT postID FROM blog_posts');
-            $total = $rows->rowCount();
+                # Assign total number of records
+                $pages->set_total($total);
 
-            # Assign total number of records
-            $pages->set_total($total);
-
-            try
-            {
-
-                $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC ' . $pages->get_limit());
-                while ($row = $stmt->fetch())
+                try
                 {
 
-                    echo '<div class="post">';
-                    echo '<div class="post-title"><h2><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2></div>';
-                    echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
-                    echo '<p>' . $row['postDesc'] . '</p>';
-                    echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
-                    echo '</div>';
+                    $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC ' . $pages->get_limit());
+                    while ($row = $stmt->fetch())
+                    {
 
+                        echo '<article>';
+                        echo '<header>';
+                        echo '<h2><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
+                        echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
+                        echo '</header>';
+                        echo '<p>' . $row['postDesc'] . '</p>';
+                        echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
+                        echo '</article>';
+
+                    }
+
+                } catch (PDOException $e)
+                {
+                    echo $e->getMessage();
                 }
 
-            } catch (PDOException $e)
-            {
-                echo $e->getMessage();
-            }
+                # Output Pagination
+                echo $pages->page_links();
 
-            # Output Pagination
-            echo $pages->page_links();
+                ?>
+            </main>
 
-            ?>
-        </div>
-
-        <div id="sidebar">
-            <div id="sidebar-header">Sidebar Header</div>
-            <div id="sidebard-content">
+            <aside>
+                <h2>WHO AM I ?</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -75,19 +76,18 @@ require('includes/config.php');
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                     culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-            </div>
+            </aside>
 
         </div>
-
     </div>
+
+    <footer>
+        <div class="inner-footer">
+            <p>Pl&aacute;tano - The Super-lightweight blog engine by <a href="https://github.com/oscarbatlle/platano">Oscar
+                    Batlle</a></p>
+        </div>
+    </footer>
 </div>
-
-<div class="etc"></div>
-
-<div id="footer">
-    <div id="footer-content">Pl&aacute;tano - The Super-lightweight blog engine by <a href="https://github.com/oscarbatlle/platano">Oscar Batlle</div>
-</div>
-
 
 </body>
 </html>
