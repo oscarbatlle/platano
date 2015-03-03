@@ -43,7 +43,7 @@ if (isset($_GET['delpost']))
 
 <div class="container">
 
-    <header class="banner">
+    <header class="banner group">
         <h1>Pl&aacute;tano</h1>
 
         <h2>The Super-lightweight blog engine</h2>

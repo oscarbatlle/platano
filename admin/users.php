@@ -47,7 +47,13 @@ if (isset($_GET['deluser']))
 
 <div class="container">
 
-    <?php include('menu.php'); ?>
+    <header class="banner group">
+        <h1>Pl&aacute;tano</h1>
+
+        <h2>The Super-lightweight blog engine</h2>
+
+        <?php include('menu.php'); ?>
+    </header>
 
     <?php
     # Show message from add / edit page
