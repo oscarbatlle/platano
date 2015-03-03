@@ -55,6 +55,8 @@ if (isset($_GET['deluser']))
         <?php include('menu.php'); ?>
     </header>
 
+    <section class="admin">
+
     <?php
     # Show message from add / edit page
     if (isset($_GET['action']))
@@ -102,7 +104,7 @@ if (isset($_GET['deluser']))
         }
         ?>
     </table>
-
+</section>
     <p><a href='adduser.php'>Add User</a></p>
 
 </div>
