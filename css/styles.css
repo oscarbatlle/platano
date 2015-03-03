@@ -8,6 +8,11 @@ body {
     font-size: 62.5%; /* 1em = 10px */
 }
 
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
 .group:after {
     visibility: hidden;
     display: block;
@@ -25,28 +30,19 @@ body {
     zoom: 1;
 }
 
-/* IE7 */
-
-.wrapper {
-    margin: 10px auto 2em;
-    width: 980px;
-}
-
 main {
     float: left;
-    width: 650px;
-    border-top-left-radius: 10px;
+    width: 66.326531%;
     border-right: #DDDDDD 1px solid;
 }
 
-aside {
+.sidebar {
     float: right;
-    width: 300px;
-    margin-top: 25px;
-    border-top-right-radius: 10px;
+    width: 31.632653%;
+    margin-top: 1.020408%;
 }
 
-aside h2 {
+.sidebar h2 {
     color: #999;
     font-size: 1.6em;
     text-transform: uppercase;
@@ -55,13 +51,12 @@ aside h2 {
 
 footer {
     clear: both;
-    padding: 20px;
+    padding: 2.040816%;
     border-top: #DDDDDD 1px solid;
 }
 
 .inner-footer {
     margin: 0 auto;
-    width: 980px;
     text-transform: uppercase;
     text-align: center;
     font-family: "Open Sans", sans-serif;
@@ -102,12 +97,11 @@ footer {
 
 .banner {
     border-bottom: #DDDDDD 1px solid;
-    width: 980px;
     margin: 0 auto;
 }
 
 .inner-banner {
-    padding: 20px;
+    padding: 2.040816%;
     background-size: cover;
     text-align: center;
     position: relative;
@@ -135,7 +129,7 @@ footer {
 
 article {
     border-bottom: #DDDDDD 1px solid;
-    margin: 20px;
+    margin: 2.040816%;
 }
 
 article header h2 {
@@ -172,7 +166,6 @@ p.blog-date {
     width: 700px;
     margin: 0 auto;
 }
-
 
 p, li {
     color: #555555;
