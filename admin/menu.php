@@ -6,5 +6,3 @@
         <li><a href='logout.php'>Logout</a></li>
     </ul>
 </nav>
-<div class='clear'></div>
-<hr/>
