@@ -23,63 +23,58 @@ require('includes/config.php');
         </div>
     </header>
 
-    <div class="wrapper">
-        <div class="content-wrapper group">
-            <main>
-                <?php
+    <main>
+        <?php
 
-                # Create new object pass in number of pages and identifier
-                $pages = new Paginator('3', 'p');
+        # Create new object pass in number of pages and identifier
+        $pages = new Paginator('3', 'p');
 
-                # Get number of total records
-                $rows = $db->query('SELECT postID FROM blog_posts');
-                $total = $rows->rowCount();
+        # Get number of total records
+        $rows = $db->query('SELECT postID FROM blog_posts');
+        $total = $rows->rowCount();
 
-                # Assign total number of records
-                $pages->set_total($total);
+        # Assign total number of records
+        $pages->set_total($total);
 
-                try
-                {
+        try
+        {
 
-                    $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC ' . $pages->get_limit());
-                    while ($row = $stmt->fetch())
-                    {
+            $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC ' . $pages->get_limit());
+            while ($row = $stmt->fetch())
+            {
 
-                        echo '<article>';
-                        echo '<header>';
-                        echo '<h2><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
-                        echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
-                        echo '</header>';
-                        echo '<p>' . $row['postDesc'] . '</p>';
-                        echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
-                        echo '</article>';
+                echo '<article>';
+                echo '<header>';
+                echo '<h2><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
+                echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
+                echo '</header>';
+                echo '<p>' . $row['postDesc'] . '</p>';
+                echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More...</a></p>';
+                echo '</article>';
 
-                    }
+            }
 
-                } catch (PDOException $e)
-                {
-                    echo $e->getMessage();
-                }
+        } catch (PDOException $e)
+        {
+            echo $e->getMessage();
+        }
 
-                # Output Pagination
-                echo $pages->page_links();
+        # Output Pagination
+        echo $pages->page_links();
 
-                ?>
-            </main>
+        ?>
+    </main>
 
-            <aside>
-                <h2>WHO AM I ?</h2>
+    <aside class="sidebar">
+        <h2>WHO AM I ?</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </aside>
-
-        </div>
-    </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </aside>
 
     <footer>
         <div class="inner-footer">
