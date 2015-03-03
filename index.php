@@ -15,12 +15,9 @@ require('includes/config.php');
 <body>
 <div class="container">
     <header class="banner">
-        <div class="inner-banner">
-
             <h1>Pl&aacute;tano</h1>
 
             <h2>The Super-lightweight blog engine</h2>
-        </div>
     </header>
 
     <main>
