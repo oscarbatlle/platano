@@ -41,7 +41,11 @@ if (isset($_GET['delpost']))
 </head>
 <body>
 
-<div id="wrapper">
+<div class="container">
+
+    <header class="banner">
+        <h1>Pl&aacute;tano - The Super-lightweight blog engine</h1>
+    </header>
 
     <?php include('menu.php'); ?>
 
