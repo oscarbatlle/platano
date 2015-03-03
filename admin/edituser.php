@@ -20,7 +20,7 @@ if (!$user->is_logged_in())
 </head>
 <body>
 
-<div id="wrapper">
+<div class="container">
 
     <?php include('menu.php'); ?>
     <p><a href="users.php">User Admin Index</a></p>

@@ -45,7 +45,7 @@ if (isset($_GET['deluser']))
 </head>
 <body>
 
-<div id="wrapper">
+<div class="container">
 
     <?php include('menu.php'); ?>
 
