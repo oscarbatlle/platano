@@ -1,6 +1,11 @@
+html {
+    font-size: 16px;
+}
+
 body {
     margin: 0 auto;
     background: #f8f8f8;
+    font-size: 62.5%; /* 1em = 10px */
 }
 
 .group:after {
@@ -10,8 +15,17 @@ body {
     clear: both;
     height: 0;
 }
-* html .group             { zoom: 1; } /* IE6 */
-*:first-child+html .group { zoom: 1; } /* IE7 */
+
+* html .group {
+    zoom: 1;
+}
+
+/* IE6 */
+*:first-child + html .group {
+    zoom: 1;
+}
+
+/* IE7 */
 
 .wrapper {
     margin: 10px auto 2em;
@@ -34,7 +48,7 @@ aside {
 
 aside h2 {
     color: #999;
-    font-size: 16px;
+    font-size: 1.6em;
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
 }
@@ -100,14 +114,14 @@ footer {
 }
 
 .inner-banner h1 {
-    margin-bottom: 0;
-    font-size: 75px;
+    margin: 0;
+    font-size: 7.5em;
     font-weight: bold;
     color: rgba(46, 48, 58, 0.96);
 }
 
 .inner-banner h2 {
-    font-size: 24px;
+    font-size: 2.4em;
     font-weight: bold;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -124,8 +138,13 @@ article {
     margin: 20px;
 }
 
+article header h2 {
+    font-size: 2.2em;
+    color: #363842;
+}
+
 article header h2 a {
-    font-size: 22px;
+    font-size: 1em;
     color: #363842;
 }
 
@@ -154,24 +173,15 @@ p.blog-date {
     margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    color: #363842;
-    line-height: 1.15em;
-    margin: 0 0 0.4em 0;
-    font-family: "Open Sans", sans-serif;
-}
 
 p, li {
     color: #555555;
-    font-size: 16px;
+    font-size: 1.6em;
     line-height: 1.5em;
 }
 
 a {
-    font-size: 14px;
+    font-size: 0.875em;
     color: #ad141e;
     text-decoration: none;
     -webkit-transition: color 0.1s linear;
@@ -194,7 +204,7 @@ table {
     width: 98%;
     text-align: left;
     border: 1px solid #DDDDDD;
-    font-size: 12px;
+    font-size: 1.2em;
     color: #000;
     background: #fff;
     margin-bottom: 10px;
