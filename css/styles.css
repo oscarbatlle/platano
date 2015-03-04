@@ -226,6 +226,10 @@ form input {
 /* =========================== Media Queries =========================== */
 
 @media screen and (max-width: 945px) {
+    .container {
+        width: 90%;
+    }
+
     .content {
         margin: 0 auto;
     }
