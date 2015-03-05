@@ -225,7 +225,13 @@ form input {
 
 /* =========================== Media Queries =========================== */
 
-@media screen and (max-width: 1080px) {
+/*
+Breaking points:
+iPhone 6: 375px (portrait), 667px (landscape)
+iPhone 6 Plus: 414 (portrait), 736px (landscape)
+*/
+
+@media screen and (max-width: 736px) {
     .container {
         width: 90%;
     }
