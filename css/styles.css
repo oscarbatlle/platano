@@ -94,12 +94,12 @@ footer {
     margin: 2.040816%;
 }
 
-.post header h2 {
+.post header h2, .single-post header h2 {
     font-size: 2.2em;
     color: #363842;
 }
 
-.post header h2 a {
+.post header h2 a, .single-post header h2 a {
     font-size: 1em;
     color: #363842;
 }
