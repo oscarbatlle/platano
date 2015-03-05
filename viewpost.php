@@ -28,18 +28,16 @@ if ($row['postID'] == '')
 <body>
 <div class="container">
     <header class="banner">
-        <div class="inner-banner">
-            <h1>Pl&aacute;tano</h1>
+        <h1>Pl&aacute;tano</h1>
 
-            <h2>The Super-lightweight blog engine</h2>
-        </div>
+        <h2>The Super-lightweight blog engine</h2>
     </header>
-    <div class="wrapper">
 
+    <div class="content">
         <p><a href="./">&#8592; Home</a></p>
 
         <?php
-        echo '<article>';
+        echo '<article class="single-post">';
         echo '<header>';
         echo '<h2>' . $row['postTitle'] . '</h2>';
         echo '<p class="blog-date">' . date('jS F Y', strtotime($row['postDate'])) . '</p>';
@@ -49,6 +47,12 @@ if ($row['postID'] == '')
         ?>
 
     </div>
+    <footer>
+        <div class="inner-footer">
+            <p>Pl&aacute;tano - The Super-lightweight blog engine by <a href="https://github.com/oscarbatlle/platano">Oscar
+                    Batlle</a></p>
+        </div>
+    </footer>
 </div>
 </body>
 </html>
