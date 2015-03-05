@@ -17,18 +17,7 @@ if (!$user->is_logged_in())
     <meta charset="utf-8">
     <title>Admin - Add Post</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-    <script>
-        tinymce.init({
-            selector: "textarea",
-            plugins: [
-                "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table contextmenu paste"
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-        });
-    </script>
+    <script src="../ckeditor/ckeditor.js"></script>
 </head>
 <body>
 
@@ -120,17 +109,22 @@ if (!$user->is_logged_in())
             } ?>'></p>
 
         <p><label>Description</label><br/>
-            <textarea name='postDesc' cols='60' rows='10'><?php if (isset($error))
+            <textarea name='postDesc' id="postDesc" cols='60' rows='10'><?php if (isset($error))
                 {
                     echo $_POST['postDesc'];
                 } ?></textarea></p>
+        <script>
+            CKEDITOR.replace('postDesc');
+        </script>
 
         <p><label>Content</label><br/>
-            <textarea name='postCont' cols='60' rows='10'><?php if (isset($error))
+            <textarea name='postCont' id="postCont" cols='60' rows='10'><?php if (isset($error))
                 {
                     echo $_POST['postCont'];
                 } ?></textarea></p>
-
+        <script>
+            CKEDITOR.replace('postCont');
+        </script>
         <p><input type='submit' name='submit' value='Submit'></p>
 
     </form>
