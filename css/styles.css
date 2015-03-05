@@ -104,6 +104,11 @@ footer {
     color: #363842;
 }
 
+.post img, .single-post img {
+    width: 30%;
+    height: auto;
+}
+
 p.blog-date {
     color: #999;
     margin: 0 0 10px 0;
