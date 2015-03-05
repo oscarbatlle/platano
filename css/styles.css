@@ -89,17 +89,17 @@ footer {
     border-top-right-radius: 10px;
 }
 
-article {
+.post {
     border-bottom: #DDDDDD 1px solid;
     margin: 2.040816%;
 }
 
-article header h2 {
+.post header h2 {
     font-size: 2.2em;
     color: #363842;
 }
 
-article header h2 a {
+.post header h2 a {
     font-size: 1em;
     color: #363842;
 }
@@ -117,11 +117,11 @@ p.blog-date {
     height: 7px;
     border: #DDDDDD 1px solid;
     margin: -5px auto;
-    background: #FFF;
+    background: #f8f8f8;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    box-shadow: #FFF 0 0 0 5px;
+    box-shadow: #f8f8f8 0 0 0 5px;
 }
 
 #single-post-wrapper {
